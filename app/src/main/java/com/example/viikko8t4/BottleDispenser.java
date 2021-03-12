@@ -28,17 +28,6 @@ public class BottleDispenser{
         return money;
     }
 
-    public static String getArrayElementName(int index) {
-        return (bottleList.get(index-1)).getName();
-    }
-
-    public static String getArrayElementSize(int index) {
-        return String.valueOf((bottleList.get(index-1)).getSize());
-    }
-
-
-
-
     public void addMoney(int money) {
         this.money += money;
         return;
@@ -64,15 +53,6 @@ public class BottleDispenser{
             }
         }
         return errCode;
-    }
-
-    public void removeArray(int index) {
-        bottleList.get(index-1).setName("Nothing");
-        bottleList.get(index-1).setManufacturer("Nothing");
-        bottleList.get(index-1).setEnergy(0);
-        bottleList.get(index-1).setSize(0);
-        bottleList.get(index-1).setPrice(0);
-        return;
     }
 
     public void returnMoney() {
