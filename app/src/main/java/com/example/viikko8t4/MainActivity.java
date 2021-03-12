@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void addMoney(View view) {
         bottle.addMoney(Integer.parseInt(seekBarNumber.getText().toString()));
         seekBar.setProgress(0);
-        etCurrentMoney.setText(format.format(bottle.getMoney()));
+        etCurrentMoney.setText("Current money: " + format.format(bottle.getMoney()));
         etMessageConsole.setText("Klink! Added more money!");
         return;
     }
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void buyBottle(View view) {
         int errCode = bottle.buyBottle(spinnerName.getSelectedItem().toString(), Double.valueOf(spinnerSize.getSelectedItem().toString()));
         if (errCode == 0) {
-            etCurrentMoney.setText(format.format(bottle.getMoney()));
+            etCurrentMoney.setText("Current money: " + format.format(bottle.getMoney()));
             etMessageConsole.setText("KACHUNK! " + spinnerName.getSelectedItem() + " came out of the dispenser!");
         } else if (errCode == 1) {
             etMessageConsole.setText("Not enough bottles!");
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void returnMoney(View view) {
         etMessageConsole.setText("Klink klink. Money came out! You got " + String.format("%.2f", bottle.getMoney()) + "€ back");
         bottle.returnMoney();
-        etCurrentMoney.setText(String.valueOf(bottle.getMoney()));
+        etCurrentMoney.setText("Current money: " + String.valueOf(bottle.getMoney()));
         return;
     }
 
